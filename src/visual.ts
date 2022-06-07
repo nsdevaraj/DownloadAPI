@@ -63,18 +63,18 @@ export class Visual implements IVisual {
         this.visualHost.downloadService.exportVisualsContent(
             base64PdfData,
           "export.pdf",
-          "pdf",
+          "base64",
           "test"
         );
       };
       this.target.appendChild(api_pdf_btn);
 
-    //   const pdfBlob = this.b64toBlob(data, "application/pdf");
-    //   const pdf_url: string = window.URL.createObjectURL(pdfBlob);
-    //   const pdf_btn: HTMLElement = document.createElement("a");
-    //   pdf_btn.setAttribute("href", pdf_url);
-    //   pdf_btn.innerHTML = "Download PDF sample";
-    //   this.target.appendChild(pdf_btn);
+       const pdfBlob = this.b64toBlob(base64PdfData, "application/pdf");
+      const pdf_url: string = window.URL.createObjectURL(pdfBlob);
+       const pdf_btn: HTMLElement = document.createElement("a");
+       pdf_btn.setAttribute("href", pdf_url);
+       pdf_btn.innerHTML = "Download PDF sample";
+       this.target.appendChild(pdf_btn);
 
       const br: HTMLElement = document.createElement("br");
       this.target.appendChild(br);
@@ -86,21 +86,21 @@ export class Visual implements IVisual {
         this.visualHost.downloadService.exportVisualsContent(
             base64ExcelData,
           "export.xlsx",
-          "xlsx",
+          "base64",
           "test"
         );
       };
       this.target.appendChild(api_excel_btn);
 
-    //   const excelBlob = this.b64toBlob(
-    //     excelData,
-    //     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    //   );
-    //   const excel_url: string = window.URL.createObjectURL(excelBlob);
-    //   const excel_btn: HTMLElement = document.createElement("a");
-    //   excel_btn.setAttribute("href", excel_url);
-    //   excel_btn.innerHTML = "Download Excel sample";
-    //   this.target.appendChild(excel_btn);
+      // const excelBlob = this.b64toBlob(
+      //   base64ExcelData,
+      //   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      // );
+      // const excel_url: string = window.URL.createObjectURL(excelBlob);
+      // const excel_btn: HTMLElement = document.createElement("a");
+      // excel_btn.setAttribute("href", excel_url);
+      // excel_btn.innerHTML = "Download Excel sample";
+      // this.target.appendChild(excel_btn);
     }
   }
 
